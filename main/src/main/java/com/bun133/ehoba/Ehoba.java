@@ -9,6 +9,7 @@ import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Ehoba extends JavaPlugin {
@@ -42,6 +43,8 @@ class CropSuperVisor implements Listener{
     public void onCropped(ItemSpawnEvent e){
         if(e.getEntity().getItemStack().getType().equals(Material.WHEAT)){
             e.getEntity().getItemStack().getItemMeta().setDisplayName("お米");
+        }else if(e.getEntity().getItemStack().getType().equals(Material.COOKED_BEEF)){
+            e.getEntity().getItemStack().getItemMeta().setDisplayName("エホバ巻き");
         }
     }
 }
@@ -49,6 +52,9 @@ class CropSuperVisor implements Listener{
 class Recipes{
     public static ShapedRecipe getEhoba(JavaPlugin plugin){
         ItemStack ehoba = new ItemStack(Ehoba.Ehoba,1);
+        ItemMeta m = ehoba.getItemMeta();
+        m.setDisplayName("エホバ巻き");
+        ehoba.setItemMeta(m);
 
         NamespacedKey name = new NamespacedKey(plugin,"ehoba");
 

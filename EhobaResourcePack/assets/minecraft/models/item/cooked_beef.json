@@ -1,9 +1,9 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
-    "parent": "item/generated",
-    "textures": {
+	"textures": {
         "ehoba_side": "minecraft:items/ehoba_side",
-        "ehoba": "minecraft:items/ehoba"
+        "ehoba": "minecraft:items/ehoba",
+		"layer0":"minecraft:items/ehoba_side"
     },
     "display": {
         "gui": {
@@ -27,7 +27,7 @@
             "scale": [ 1, 1, 1 ]
         },
         "firstperson_righthand": {
-            "rotation": [ 0, 315, 0 ],
+            "rotation": [ 10, 20, 0 ],
             "translation": [ 0, 2.5, 0 ],
             "scale": [ 0.4, 0.4, 0.4 ]
         },
@@ -40,13 +40,13 @@
     "elements": [
         {
             "name": "Cube",
-            "from": [ 5, 7, 7 ], 
-            "to": [ 11, 9, 9 ], 
+            "from": [ 0, 4, 4 ], 
+            "to": [ 16, 12, 12 ], 
             "faces": {
-                "north": { "texture": "#ehoba", "uv": [ 0, 0, 6, 2 ] },
-                "east": { "texture": "#ehoba_side", "uv": [ 0, 0, 2, 2 ] },
-                "south": { "texture": "#ehoba", "uv": [ 0, 0, 6, 2 ] },
-                "west": { "texture": "#ehoba_side", "uv": [ 0, 0, 2, 2 ] },
+                "north": { "texture": "#ehoba", "uv": [ 0, 0, 16, 8 ] },
+                "east": { "texture": "#ehoba_side", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#ehoba", "uv": [ 0, 0, 16, 8 ] },
+                "west": { "texture": "#ehoba_side", "uv": [ 0, 0, 16, 16 ] },
                 "up": { "texture": "#ehoba", "uv": [ 0, 0, 7, 2 ] },
                 "down": { "texture": "#ehoba", "uv": [ 0, 0, 8, 2 ] }
             }
