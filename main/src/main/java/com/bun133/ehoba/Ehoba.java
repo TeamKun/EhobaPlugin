@@ -29,8 +29,8 @@ public final class Ehoba extends JavaPlugin {
 }
 
 class JoinListener implements Listener {
-    public static final String download_link = "";
-    public static final String hash = "";
+    public static final String download_link = "https://www.dropbox.com/s/mqig9dffbov16b6/EhobaResourcePack.zip?dl=1";
+    public static final String hash = "0ff388c6ddb3be0b73ecea97652b8017acafaf7d";
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
