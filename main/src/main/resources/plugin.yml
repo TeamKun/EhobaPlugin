@@ -1,0 +1,7 @@
+name: Ehoba
+version: ${project.version}
+main: com.bun133.ehoba.Ehoba
+api-version: 1.15
+authors: [ Bun133 ]
+description: You can make EhobaMaki
+website: https://twitter.com/bun133_
