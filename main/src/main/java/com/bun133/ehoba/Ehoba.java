@@ -18,7 +18,8 @@ public final class Ehoba extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        this.getServer().getPluginManager().registerEvents(new JoinListener(),this);
+//        this.getServer().getPluginManager().registerEvents(new JoinListener(),this);
+        this.getServer().getPluginManager().registerEvents(new CropSuperVisor(),this);
         Bukkit.addRecipe(Recipes.getEhoba(this));
     }
 
@@ -42,9 +43,13 @@ class CropSuperVisor implements Listener{
     @EventHandler
     public void onCropped(ItemSpawnEvent e){
         if(e.getEntity().getItemStack().getType().equals(Material.WHEAT)){
-            e.getEntity().getItemStack().getItemMeta().setDisplayName("お米");
+            ItemMeta m = e.getEntity().getItemStack().getItemMeta();
+            m.setDisplayName("お米");
+            e.getEntity().getItemStack().setItemMeta(m);
         }else if(e.getEntity().getItemStack().getType().equals(Material.COOKED_BEEF)){
-            e.getEntity().getItemStack().getItemMeta().setDisplayName("エホバ巻き");
+            ItemMeta m = e.getEntity().getItemStack().getItemMeta();
+            m.setDisplayName("エホバ巻き");
+            e.getEntity().getItemStack().setItemMeta(m);
         }
     }
 }
@@ -59,8 +64,10 @@ class Recipes{
         NamespacedKey name = new NamespacedKey(plugin,"ehoba");
 
         ShapedRecipe recipe = new ShapedRecipe(name,ehoba);
-        recipe.shape("RRR","FFF","RRR");
-        recipe.setIngredient('R',Material.WHEAT);
+        recipe.shape("WCW","WEW","WFW");
+        recipe.setIngredient('W',Material.DRIED_KELP);
+        recipe.setIngredient('C',Material.CARROT);
+        recipe.setIngredient('E',Material.EGG);
         recipe.setIngredient('F',Material.WHEAT);
 
         return recipe;
